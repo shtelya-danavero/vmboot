@@ -1,4 +1,8 @@
 ---
+- name: Check Nginx
+  listen: restart nginx
+  ansible.builtin.command: nginx -t
+
 - name: Restart Nginx
   listen: restart nginx
   ansible.builtin.service:
