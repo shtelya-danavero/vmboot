@@ -1,5 +1,10 @@
 ---
-- name: Make nginx config
+- name: Install Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: latest
+
+- name: Make Nginx config
   ansible.builtin.copy:
     src: default.conf
     dest: /etc/nginx/nginx.conf
