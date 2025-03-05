@@ -10,3 +10,4 @@
       - mysql-client
   roles:
     - apt
+    - nginx
