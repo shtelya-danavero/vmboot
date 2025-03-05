@@ -1,1 +1,8 @@
-
+---
+- name: Dafault packages
+  ansible.builtin.apt:
+    pkg:
+      - git
+      - wget
+      - awscli
+    state: latest
