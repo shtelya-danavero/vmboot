@@ -1,5 +1,5 @@
 ---
 - name: Make nginx config
-  copy:
+  ansible.builtin.copy:
     src: default.conf
     dest: /etc/nginx/nginx.conf
