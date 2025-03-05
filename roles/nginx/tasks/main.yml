@@ -1,0 +1,80 @@
+- name: Make nginx config
+  ansible.builtin.copy:
+    content: |
+      user www-data;
+      worker_processes auto;
+      pid /run/nginx.pid;
+      include /etc/nginx/modules-enabled/*.conf;
+
+      events {
+        worker_connections 768;
+        multi_accept on;
+      }
+
+      http {
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        server_tokens off;
+        absolute_redirect off;
+        
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+        
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+        
+        access_log /var/log/nginx/access.log;
+        
+        client_header_timeout 60;
+        keepalive_timeout 10 10;
+        send_timeout 60;
+        
+        reset_timedout_connection on;
+        client_max_body_size 10m;
+        
+        ## Gzip
+        gzip on;
+        gzip_buffers 32 16k;
+        gzip_comp_level 6;
+        gzip_http_version 1.1;
+        gzip_min_length 10;
+        gzip_types text/plain text/css application/json application/javascript 
+          text/xml application/xml application/xml+rss text/javascript
+          image/x-icon application/vnd.ms-fontobject font/opentype application/x-font-ttf;
+        gzip_vary on;
+        gzip_proxied any; # Compression for all requests.
+        gzip_disable msie6;
+        
+        ssl_session_cache shared:SSL:30m;
+        ssl_session_timeout 1d;
+      
+        geoip2 /donatestock/efs/infrastructure/geoip2/GeoLite2-Country.mmdb {
+          auto_reload 60m;
+          $geoip2_metadata_city_build metadata build_epoch;
+          $geoip2_data_country_name country names en;
+          $geoip2_data_country_code country iso_code;
+          $geoip2_data_city_name city names en;
+          $geoip2_data_region_name subdivisions 0 names en;
+          $geoip2_data_state_code  subdivisions 0 iso_code;
+        }
+
+        geoip2 /donatestock/efs/infrastructure/geoip2/GeoLite2-City.mmdb {
+          auto_reload 60m;
+          $geoip2_metadata_city_build metadata build_epoch;
+          $geoip2_data_city_name city names en;
+        }
+        
+        fastcgi_intercept_errors        on;
+        fastcgi_hide_header         'Link';
+        fastcgi_hide_header  'X-Generator';
+        fastcgi_hide_header 'X-Powered-By';
+        
+        # Block https://httpoxy.org/ attacks.
+        fastcgi_param  HTTP_PROXY          "";
+        
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+      }
+    dest: /etc/nginx/nginx.conf
+    validate: nginx -t
