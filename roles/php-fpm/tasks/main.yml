@@ -14,8 +14,6 @@
 - name: Install php
   ansible.builtin.apt:
     pkg:
-      - unzip
-      - mysql-client
       - php7.3
       - php7.3-common
       - php7.3-fpm
