@@ -5,4 +5,6 @@
       - git
       - wget
       - awscli
+      - unzip
+      - mysql-client
     state: latest
