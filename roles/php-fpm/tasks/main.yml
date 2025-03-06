@@ -3,6 +3,10 @@
   ansible.builtin.apt_repository:
     repo: ppa:ondrej/php
 
+- name: Update packages cache
+  ansible.builtin.apt:
+    update_cache: yes
+
 - name: Install php
   ansible.builtin.apt:
     pkg:
