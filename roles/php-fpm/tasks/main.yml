@@ -1,10 +1,4 @@
 ---
-- name: Install apt-transport-https
-  ansible.builtin.apt:
-    pkg:
-      - apt-transport-https
-      - software-properties-common
-
 - name: Add php repository
   ansible.builtin.apt_repository:
     repo: ppa:ondrej/php
