@@ -1,7 +1,9 @@
 ---
 - name: Install apt-transport-https
   ansible.builtin.apt:
-    name: apt-transport-https
+    pkg:
+      - apt-transport-https
+      - software-properties-common
 
 - name: Add php repository
   ansible.builtin.apt_repository:
