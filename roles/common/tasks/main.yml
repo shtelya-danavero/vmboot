@@ -3,9 +3,9 @@
   ansible.builtin.apt:
     pkg:
       - git
-      # - wget
-      # - awscli
-      # - unzip
-      # - mysql-client
-      # - apt-transport-https
-      # - software-properties-common
+      - wget
+      - awscli
+      - unzip
+      - mysql-client
+      - apt-transport-https
+      - software-properties-common
