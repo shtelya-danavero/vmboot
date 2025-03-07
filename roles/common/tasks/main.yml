@@ -6,10 +6,10 @@
 - name: Dafault packages
   ansible.builtin.apt:
     pkg:
-      - git
-      - wget
-      - awscli
-      - unzip
-      - mysql-client
-      # - apt-transport-https
-      # - software-properties-common
+      # - git
+      # - wget
+      # - awscli
+      # - unzip
+      # - mysql-client
+      - apt-transport-https
+      - software-properties-common
