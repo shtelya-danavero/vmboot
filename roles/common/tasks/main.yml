@@ -1,4 +1,8 @@
 ---
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: test.dev.cloud
+
 - name: Dafault packages
   ansible.builtin.apt:
     pkg:
