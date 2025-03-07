@@ -1,0 +1,10 @@
+---
+- name: Check php-fpm
+  listen: restart php-fpm
+  ansible.builtin.command: php-fpm{{ php_version }} -t
+
+- name: Restart php-fpm
+  listen: restart php-fpm
+  ansible.builtin.service:
+    name: php{{ php_version }}-fpm
+    state: restarted
