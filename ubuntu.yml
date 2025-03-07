@@ -5,5 +5,7 @@
   vars: 
     php_version: 7.4
   roles:
+    - common
+    - nginx
     - php-fpm
         
