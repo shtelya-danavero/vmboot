@@ -3,13 +3,13 @@
   ansible.builtin.hostname:
     name: test.dev.cloud
 
-- name: Dafault packages
-  ansible.builtin.apt:
-    pkg:
-      # - git
-      # - wget
-      # - awscli
-      # - unzip
-      # - mysql-client
-      - apt-transport-https
-      - software-properties-common
+# - name: Dafault packages
+#   ansible.builtin.apt:
+#     pkg:
+#       - git
+#       - wget
+#       - awscli
+#       - unzip
+#       - mysql-client
+#       - apt-transport-https
+#       - software-properties-common
