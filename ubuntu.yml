@@ -3,7 +3,7 @@
   connection: local
   become: true
   vars: 
-    php_version: 7.3
+    php_version: 7.4
   roles:
     - php-fpm
         
