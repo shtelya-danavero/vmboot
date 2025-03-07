@@ -23,3 +23,4 @@
       - php{{ php_version }}-xml
       - php{{ php_version }}-zip
       - php{{ php_version }}-redis
+  notify: restart php-fpm
