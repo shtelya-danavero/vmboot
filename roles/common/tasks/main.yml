@@ -12,3 +12,4 @@
       - unzip
       - mysql-client
       - software-properties-common
+      - apt-transport-https
