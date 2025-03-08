@@ -6,7 +6,7 @@
 
 - name: Install php
   ansible.builtin.apt:
-    pkg:
+    name:
       - php{{ php_version }}
       - php{{ php_version }}-common
       - php{{ php_version }}-fpm
