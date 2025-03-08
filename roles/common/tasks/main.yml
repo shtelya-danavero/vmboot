@@ -6,4 +6,6 @@
 - name: Dafault packages
   ansible.builtin.apt:
     name:
+      - git
+      - wget
       - unzip
