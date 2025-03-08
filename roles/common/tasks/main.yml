@@ -11,3 +11,4 @@
       - awscli
       - unzip
       - mysql-client
+      - software-properties-common
