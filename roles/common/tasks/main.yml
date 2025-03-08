@@ -7,4 +7,4 @@
   ansible.builtin.apt:
     pkg:
       - git
-      - awscli
+      - unzip
