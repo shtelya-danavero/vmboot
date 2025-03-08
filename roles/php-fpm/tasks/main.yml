@@ -2,6 +2,9 @@
 - name: Add php repository
   ansible.builtin.command: add-apt-repository ppa:ondrej/php -y
 
+- name: Update apt-get
+  ansible.builtin.command: apt update
+
 - name: Install php
   ansible.builtin.apt:
     name:
