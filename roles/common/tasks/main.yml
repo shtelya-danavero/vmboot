@@ -5,5 +5,5 @@
 
 - name: Dafault packages
   ansible.builtin.apt:
-    pkg:
+    name:
       - unzip
