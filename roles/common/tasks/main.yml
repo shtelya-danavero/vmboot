@@ -3,6 +3,11 @@
   ansible.builtin.hostname:
     name: test.dev.cloud
 
+- name: Custom profile
+  ansible.builtin.copy:
+    src: custom-profile.sh
+    dest: /etc/profile.d/custom.sh
+
 - name: Dafault packages
   ansible.builtin.apt:
     name:
