@@ -11,5 +11,3 @@
       - awscli
       - unzip
       - mysql-client
-      - apt-transport-https
-      - software-properties-common
