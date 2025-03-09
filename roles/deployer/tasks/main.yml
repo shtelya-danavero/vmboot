@@ -1,3 +1,6 @@
 ---
 - name: Install php deployer
-  ansible.builtin.command: wget https://deployer.org/releases/v{{ deployer_version }}/deployer.phar -O /usr/local/bin/dep
+  ansible.builtin.get_url:
+    url: https://deployer.org/releases/v{{ deployer_version }}/deployer.phar
+    dest: /usr/local/bin/dep
+    mode: +x
