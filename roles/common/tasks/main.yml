@@ -17,6 +17,7 @@
       - zip
       - unzip
       - nano
+      - jq
       - mysql-client
       - software-properties-common
       - apt-transport-https
