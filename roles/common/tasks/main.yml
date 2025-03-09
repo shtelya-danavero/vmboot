@@ -8,7 +8,7 @@
     src: custom-profile.sh
     dest: /etc/profile.d/custom.sh
 
-- name: Dafault packages
+- name: Install default packages
   ansible.builtin.apt:
     name:
       - git

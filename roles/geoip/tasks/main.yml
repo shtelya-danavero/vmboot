@@ -1,0 +1,9 @@
+---
+- name: Install GeoIP packages
+  ansible.builtin.apt:
+    name:
+      - mmdb-bin
+      - libmaxminddb0
+      - libmaxminddb-dev
+      - libnginx-mod-http-geoip2
+      - libnginx-mod-stream-geoip2

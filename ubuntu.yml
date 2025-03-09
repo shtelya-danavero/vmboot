@@ -9,6 +9,7 @@
   roles:
     - common
     - nginx
+    - geoip
     - php-fpm
     - composer
     - deployer
