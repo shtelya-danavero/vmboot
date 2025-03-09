@@ -1,0 +1,3 @@
+---
+- name: Install php composer
+  ansible.builtin.command: wget https://github.com/composer/composer/releases/download/{{ composer_version }}/composer.phar -O /usr/local/bin/composer
