@@ -14,7 +14,9 @@
       - git
       - wget
       - awscli
+      - zip
       - unzip
+      - nano
       - mysql-client
       - software-properties-common
       - apt-transport-https
